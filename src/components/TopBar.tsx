@@ -1,18 +1,28 @@
-import * as React from "react";
-import { Button, Grid } from "@chakra-ui/react";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import * as React from 'react'
 
-/*
-JSON source: https://raw.githubusercontent.com/jherr/todos-four-ways/master/data/todos.json
-*/
+import {Button, Grid} from '@chakra-ui/react'
+
+import {useTaskContext} from '../store'
+
+import {ColorModeSwitcher} from './ColorModeSwitcher'
+import {getData} from "./data";
+
 
 function TopBar() {
-  return (
-    <Grid pt={2} templateColumns="1fr 1fr" columnGap="3">
-      <ColorModeSwitcher />
-      <Button>Load</Button>
-    </Grid>
-  );
+    const context = useTaskContext()
+    const {loadTasks} = context
+    if (!context) {
+        throw new Error("aslkd")
+    }
+    const onClickHandler = () => {
+        loadTasks(getData())
+    }
+    return (
+        <Grid pt={2} templateColumns="1fr 1fr" columnGap="3">
+            <ColorModeSwitcher/>
+            <Button onClick={onClickHandler}>Load</Button>
+        </Grid>
+    )
 }
 
-export default TopBar;
+export default TopBar
