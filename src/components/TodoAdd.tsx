@@ -4,11 +4,11 @@ import { Button, Input, Grid } from '@chakra-ui/react'
 import {useTaskContext} from "todo-state-manager-react";
 
 function AddTask() {
-    const {setNewTask, addTask} = useTaskContext()
+    const {newTask, setNewTask, addTask} = useTaskContext()
 
   return (
     <Grid pt={2} templateColumns="5fr 1fr" columnGap="3">
-      <Input onChange={(e)=>setNewTask(e.target.value)} placeholder="New task" />
+      <Input value={newTask} onChange={(e)=>setNewTask(e.target.value)} placeholder="New task" />
       <Button onClick={()=>{
           addTask()
       }}>
