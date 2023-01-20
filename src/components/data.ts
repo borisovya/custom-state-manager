@@ -1,6 +1,4 @@
 
-import {Task} from "../store";
-
 //имитация загрузки данных
 export const getData = () => {
     return [
@@ -19,5 +17,5 @@ export const getData = () => {
             text: 'Enjoy',
             isDone: false,
         }
-    ] as Task[]
+    ]
 }

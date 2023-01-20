@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import {Button, Checkbox, Flex, Heading, Input} from '@chakra-ui/react'
+import {useTaskContext} from "todo-state-manager-react";
 
-import {useTaskContext} from '../store'
 
 function TodoListItems() {
 

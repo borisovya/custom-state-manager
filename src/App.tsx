@@ -5,7 +5,7 @@ import {ChakraProvider, Box, theme} from '@chakra-ui/react'
 import TodoAdd from './components/TodoAdd'
 import TodoList from './components/TodoList'
 import TopBar from './components/TopBar'
-import {TaskProvider} from "./store";
+import {TaskProvider} from "todo-state-manager-react";
 
 export function App() {
 

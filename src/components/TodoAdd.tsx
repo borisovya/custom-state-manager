@@ -1,16 +1,14 @@
 import * as React from 'react'
 
 import { Button, Input, Grid } from '@chakra-ui/react'
+import {useTaskContext} from "todo-state-manager-react";
 
-
-import {useTaskContext} from "../store";
-
-function TodoAdd() {
+function AddTask() {
     const {setNewTask, addTask} = useTaskContext()
 
   return (
     <Grid pt={2} templateColumns="5fr 1fr" columnGap="3">
-      <Input onChange={(e)=>setNewTask(e.target.value)} placeholder="New todo" />
+      <Input onChange={(e)=>setNewTask(e.target.value)} placeholder="New task" />
       <Button onClick={()=>{
           addTask()
       }}>
@@ -19,4 +17,4 @@ function TodoAdd() {
   )
 }
 
-export default TodoAdd
+export default AddTask

@@ -2,17 +2,17 @@ import * as React from 'react'
 
 import {Button, Grid} from '@chakra-ui/react'
 
-import {useTaskContext} from '../store'
 
 import {ColorModeSwitcher} from './ColorModeSwitcher'
 import {getData} from "./data";
+import {useTaskContext} from "todo-state-manager-react";
 
 
 function TopBar() {
     const context = useTaskContext()
     const {loadTasks} = context
     if (!context) {
-        throw new Error("aslkd")
+        throw new Error("Error")
     }
     const onClickHandler = () => {
         loadTasks(getData())
